@@ -236,6 +236,15 @@ abstract class DbSimple_Database extends DbSimple_LastError
      */
     public function escape($s, $isIdent=false)
     {
+        if(is_int($s)) {
+        // if this is a integer value - not need to escape (as for ?d placeholder)
+            return $s;
+        } elseif(is_float($s)) {
+        // for mysql the point "." is the separator for the decimal point
+        // for example, as for "?f" placeholder
+            return str_replace(',', '.', $s);
+        }
+
         return $this->_performEscape($s, $isIdent);
     }
 
@@ -716,7 +725,7 @@ abstract class DbSimple_Database extends DbSimple_LastError
                 # Placeholder
                 (\?) ( [_dsafn&|\#]? )                           #2 #3
             )
-        }sx';
+        }sxS';
         $query = preg_replace_callback(
             $re,
             array(&$this, '_expandPlaceholdersCallback'),
