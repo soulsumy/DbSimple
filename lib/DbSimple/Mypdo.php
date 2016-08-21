@@ -24,7 +24,7 @@ class DbSimple_Mypdo extends DbSimple_Database
 {
 	private $link;
 
-	public function DbSimple_Mypdo($dsn)
+	public function __construct($dsn)
 	{
 		$base = preg_replace('{^/}s', '', $dsn['path']);
 		if (!class_exists('PDO'))

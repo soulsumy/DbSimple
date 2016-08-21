@@ -30,7 +30,7 @@ class DbSimple_Mysqli extends DbSimple_Database
      * constructor(string $dsn)
      * Connect to MySQL server.
      */
-    function DbSimple_Mysqli($dsn)
+    function __construct($dsn)
     {
         
         if (!is_callable("mysqli_connect"))
