@@ -24,7 +24,7 @@ class DbSimple_Litepdo extends DbSimple_Database
 {
 	private $link;
 
-	public function DbSimple_Litepdo($dsn)
+	public function __construct($dsn)
 	{
 		if (!class_exists('PDO'))
 			return $this->_setLastError("-1", "PDO extension is not loaded", "PDO");

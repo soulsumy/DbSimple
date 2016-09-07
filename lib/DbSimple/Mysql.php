@@ -30,7 +30,7 @@ class DbSimple_Mysql extends DbSimple_Database
      * constructor(string $dsn)
      * Connect to MySQL.
      */
-    function DbSimple_Mysql($dsn)
+    function __construct($dsn)
     {
         $connect = 'mysql_'.((isset($dsn['persist']) && $dsn['persist'])?'p':'').'connect';
         if (!is_callable($connect))

@@ -43,7 +43,7 @@ class DbSimple_Ibase extends DbSimple_Database
      * constructor(string $dsn)
      * Connect to Interbase/Firebird.
      */
-    function DbSimple_Ibase($dsn)
+    function __construct($dsn)
     {
         $p = DbSimple_Database::parseDSN($dsn);
         if (!is_callable('ibase_connect')) {

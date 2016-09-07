@@ -33,7 +33,7 @@ class DbSimple_Postgresql extends DbSimple_Database
      * constructor(string $dsn)
      * Connect to PostgresSQL.
      */
-    function DbSimple_Postgresql($dsn)
+    function __construct($dsn)
     {
         $p = DbSimple_Database::parseDSN($dsn);
         if (!is_callable('pg_connect')) {
