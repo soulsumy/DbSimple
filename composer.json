@@ -1,5 +1,5 @@
 {
-    "name": "dklab/dbsimple",
+    "name": "ivan1986/dbsimple",
     "license": "MIT",
     "authors": [
         {
@@ -15,22 +15,11 @@
             "email": "me@sib.li"
         }        
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/ivan1986/DbSimple"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/siberex/DbSimple"
-        }
-    ],
     "autoload": {
         "psr-0": {
             "DbSimple": "lib/"
         }
     },
     "require": {
-
     }
 }
