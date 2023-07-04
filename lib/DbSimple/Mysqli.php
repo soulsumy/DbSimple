@@ -25,6 +25,7 @@ require_once __DIR__.'/Database.php';
 class DbSimple_Mysqli extends DbSimple_Database
 {
     var $link;
+    private $_lastQuery = null;
 
     /**
      * constructor(string $dsn)
